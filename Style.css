@@ -1,0 +1,627 @@
+@charset "utf-8";
+/* CSS Document */
+
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Poppins:wght@300;400;500&display=swap');
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #41474B;
+}
+
+/* ------------------------------
+   HEADER & MENU
+--------------------------------*/
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  position: sticky;
+  top: 0;
+  background-color: #41474B;
+  z-index: 10;
+}
+
+header .logo {
+  display: flex;           /* organiza horizontalmente */
+  align-items: center;     /* centraliza verticalmente */
+  gap: 10px;               /* espaço entre imagem e texto */
+  font-family: 'Marcellus', serif;
+  font-size: 1.6em;
+  font-weight: bold;
+  color: #D9CBB4;
+}
+/* --- Menu Desktop --- */
+.nav-desktop {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-desktop a {
+  text-decoration: none;
+  color: #D9CBB4;
+  font-family: "Marcellus", serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.nav-desktop a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 8px #D9CBB4;
+}
+
+/* --- Hamburger Icon --- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #D9CBB4;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+/* --- Menu Mobile --- */
+.nav-mobile {
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  background-color: #41474B;
+  flex-direction: column;
+  gap: 15px;
+  padding: 15px 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  display: none;
+}
+
+.nav-mobile.active {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+
+
+.nav-mobile a {
+  text-decoration: none;
+  color: #D9CBB4;
+  font-family: "Marcellus", serif;
+  font-size: 18px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.nav-mobile a:hover {
+  color: #ffffff;
+}
+
+/* ------------------------------
+   HERO SECTION
+--------------------------------*/
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px 20px;
+  color: #D9CBB4;
+}
+
+#log1 { width: 50px;
+  height: auto; }
+
+.hero .logo {
+  width: 240px;
+  height: auto;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 10px rgba(217, 203, 180, 0.3));
+}
+
+.greeting {
+  font-family: "Marcellus", serif;
+  font-size: 28px;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.subtext {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  margin-top: 10px;
+  max-width: 500px;
+  color: #E1D9C6;
+}
+
+/* ------------------------------
+   CARE SECTION
+--------------------------------*/
+.care-section {
+  text-align: center;
+  padding: 100px 20px;
+  color: #D9CBB4;
+}
+
+.care-section h2 {
+  font-family: "Marcellus", serif;
+  font-size: 26px;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+.care-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.care-btn {
+  background-color: transparent;
+  color: #D9CBB4;
+  border: 1px solid #D9CBB4;
+  font-family: "Marcellus", serif;
+  font-size: 16px;
+  padding: 10px 30px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.care-btn:hover,
+.care-btn.active {
+  background-color: #D9CBB4;
+  color: #41474B;
+  box-shadow: 0 0 10px rgba(217, 203, 180, 0.5);
+}
+
+.care-block {
+  display: flex;
+  justify-content: center;
+}
+
+.care-content {
+  display: none;
+  background-color: #D9CBB4;
+  border: 1px solid #D9CBB4;
+  border-radius: 15px;
+  padding: 40px;
+  max-width: 500px;
+  text-align: left;
+  font-family: "Poppins", sans-serif;
+  color: #41474B;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  animation: FadeInTop 0.6s ease;
+}
+
+.care-content.active {
+  display: block;
+}
+
+.care-content ul {
+  list-style: disc;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.care-content li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.care-gif {
+  width: 100%;
+  max-width: 300px;
+  display: block;
+  margin: 0 auto 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(65, 71, 75, 0.3);
+}
+
+#icon {
+  max-width: 80px;
+  max-height: 80px;
+  width: auto;
+  height: auto;
+  
+}
+
+/* ------------------------------
+   FOOTER
+--------------------------------*/
+.footer {
+  background-color: #41474B;
+  color: #D9CBB4;
+  text-align: center;
+  padding: 40px 20px;
+  font-family: "Poppins", sans-serif;
+  border-top: 1px solid #D9CBB4;
+}
+
+.footer-section {
+  margin-bottom: 20px;
+}
+
+.footer-section h4 {
+  font-family: "Marcellus", serif;
+  font-size: 18px;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.footer-info p {
+  margin: 5px 0;
+}
+
+.footer-socials a {
+  color: #D9CBB4;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 20px;
+  transition: all 0.3s ease;
+}
+
+.footer-socials a:hover {
+  color: #ffffff;
+  transform: scale(1.2);
+}
+
+/* ------------------------------
+   BOOKING SECTION
+--------------------------------*/
+.booking-section {
+  background-color: #41474B;
+  color: #D9CBB4;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.booking-section h1 {
+  font-family: "Marcellus", serif;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.booking-section p,
+.booking-info p,
+.booking-info ul {
+  max-width: 600px;
+  margin: 0 auto 20px auto;
+  font-size: 16px;
+  color: #E1D9C6;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.booking-info ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.booking-info li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.booking-btn {
+  display: inline-block;
+  margin: 30px 0;
+  padding: 15px 30px;
+  border-radius: 30px;
+  background-color: #D9CBB4;
+  color: #41474B;
+  font-family: "Marcellus", serif;
+  font-size: 16px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.booking-btn:hover {
+  background-color: #ffffff;
+  color: #41474B;
+  box-shadow: 0 0 10px rgba(217,203,180,0.5);
+}
+
+/* ------------------------------
+   PRICING SECTION
+--------------------------------*/
+.pricing-section {
+  background-color: #41474B;
+  color: #D9CBB4;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.pricing-section h1 {
+  font-family: "Marcellus", serif;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.pricing-section h3 {
+  font-family: "Marcellus", serif;
+  font-size: 22px;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+/* Tabela vazada com fontes claras */
+.price-table {
+  width: 90%;
+  max-width: 600px;
+  margin: 20px auto;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 12px;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+}
+
+/* Cabeçalho */
+.price-table th {
+  border: 2px solid #D9CBB4;
+  color: #E1D9C6; /* fonte clara */
+  background-color: rgba(217,203,180,0.1); /* leve transparência */
+  font-family: "Marcellus", serif;
+  font-size: 18px;
+  padding: 15px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+/* Linhas */
+.price-table td {
+  border: 2px solid #D9CBB4;
+  color: #E1D9C6; /* fonte clara */
+  padding: 12px 15px;
+  text-align: center;
+  font-size: 16px;
+  background-color: rgba(225,217,198,0.05); /* fundo quase transparente */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Hover nas linhas */
+.price-table tr:hover td {
+  background-color: rgba(217,203,180,0.3);
+  color: #E1D9C6; /* muda para cor escura ao passar o mouse */
+}
+
+/* Bordas arredondadas nas extremidades da tabela */
+.price-table tr:first-child th:first-child {
+  border-top-left-radius: 12px;
+}
+.price-table tr:first-child th:last-child {
+  border-top-right-radius: 12px;
+}
+.price-table tr:last-child td:first-child {
+  border-bottom-left-radius: 12px;
+}
+.price-table tr:last-child td:last-child {
+  border-bottom-right-radius: 12px;
+}
+
+
+.pricing-section ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 20px auto;
+  max-width: 600px;
+  text-align: left;
+}
+
+.pricing-section ul li {
+  margin-bottom: 10px;
+  padding-left: 25px;
+  position: relative;
+}
+
+.pricing-section ul li::before {
+  content: "•";
+  color: #D9CBB4;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.pricing-section p.centered {
+  max-width: 600px;
+  margin: 20px auto;
+  text-align: left;
+  line-height: 1.6;
+  color: #E1D9C6;
+}
+
+/* ------------------------------
+   ANIMAÇÕES
+--------------------------------*/
+@keyframes FadeInTop {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ------------------------------
+   RESPONSIVO
+--------------------------------*/
+@media (max-width: 768px) {
+  .nav-desktop {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+/*-----GALLERY-------*/
+
+/* ====== Galeria ====== */
+/* ==============================
+   GALERIA DE IMAGENS
+============================== */
+.gallery-section {
+  padding: 50px 20px;
+  text-align: center;
+  color: #D9CBB4;
+}
+
+.gallery-section h2 {
+  font-family: 'Marcellus', serif;
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+/* Controles acima da galeria */
+.gallery-controls {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px; /* espaço entre setas e galeria */
+}
+
+.gallery-controls button {
+  background-color: #D9CBB4;
+  border: none;
+  padding: 10px 20px;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 8px;
+  color: #41474B;
+  transition: all 0.3s ease;
+}
+
+.gallery-controls button:hover {
+  background-color: #E1D9C6;
+}
+
+/* Wrapper da galeria */
+.gallery-wrapper {
+  position: relative;
+  max-width: 600px; /* largura máxima da galeria */
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Container deslizante */
+.gallery-container {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+/* Cada slide */
+.gallery-slide {
+  min-width: 100%; /* cada slide ocupa toda a largura do container */
+  box-sizing: border-box;
+  aspect-ratio: 7 / 10; /* mantém proporção retangular */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 20px 50px;
+}
+
+/* Imagem dentro do slide */
+.gallery-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* centraliza e preenche */
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* ====== Responsivo ====== */
+@media (max-width: 768px) {
+  .gallery-wrapper {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .gallery-slide {
+    padding: 10px 20px;
+  }
+
+  .gallery-controls {
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+
+  .gallery-controls button {
+    font-size: 20px;
+    padding: 8px 15px;
+  }
+}
+
+/* ====== blog ====== */
+
+.blog-section {
+  padding: 80px 20px;
+  text-align: center;
+  color: #D9CBB4;
+  background-color: #41474B; /* mesma cor de fundo do site */
+}
+
+.blog-section h2 {
+  font-family: 'Marcellus', serif;
+  font-size: 28px;
+  margin-bottom: 40px;
+  color: #D9CBB4;
+}
+
+.blog-post {
+  background-color: #41474B;
+  border: 2px solid #D9CBB4;
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 30px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.blog-post:hover {
+  transform: translateY(-5px);
+}
+
+.blog-post h3 {
+  font-family: 'Marcellus', serif;
+  font-size: 22px;
+  margin-bottom: 8px;
+  color: #D9CBB4;
+}
+
+.blog-post small {
+  color: #E1D9C6;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.blog-post img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  object-fit: cover;
+}
+
+.blog-post p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #E1D9C6;
+}

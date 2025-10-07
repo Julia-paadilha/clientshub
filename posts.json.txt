@@ -1,0 +1,6 @@
+{
+  "title": "Terceiro Post",
+  "date": "2025-10-09",
+  "content": "Este é o texto do terceiro post, mostrando como atualizar pelo GitHub.",
+  "image": "https://github.com/Julia-paadilha/galleryweb/blob/main/images/IMG_3864.PNG?raw=true"
+}
